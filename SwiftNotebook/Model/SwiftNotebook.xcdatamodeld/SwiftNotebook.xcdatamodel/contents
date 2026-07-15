@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23000" systemVersion="24A5279h" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="JournalEntry" representedClassName="JournalEntry" syncable="YES" codeGenerationType="class">
+        <attribute name="idValue" attributeType="UUID" usesScalarValueType="NO" optional="NO"/>
+        <attribute name="dateValue" attributeType="Date" usesScalarValueType="NO" optional="NO"/>
+        <attribute name="titleValue" attributeType="String" defaultValueString="" optional="NO"/>
+        <attribute name="bodyRTFDataValue" attributeType="Binary" optional="NO"/>
+        <attribute name="tagsRawValue" attributeType="String" defaultValueString="" optional="NO"/>
+        <attribute name="createdAtValue" attributeType="Date" usesScalarValueType="NO" optional="NO"/>
+        <attribute name="modifiedAtValue" attributeType="Date" usesScalarValueType="NO" optional="NO"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="entries" inverseEntity="Category"/>
+        <fetchIndex name="byDateIndex">
+            <fetchIndexElement property="dateValue" type="Binary" order="ascending"/>
+        </fetchIndex>
+    </entity>
+    <entity name="EntryTemplate" representedClassName="EntryTemplate" syncable="YES" codeGenerationType="class">
+        <attribute name="idValue" attributeType="UUID" usesScalarValueType="NO" optional="NO"/>
+        <attribute name="nameValue" attributeType="String" defaultValueString="" optional="NO"/>
+        <attribute name="weekdayValue" attributeType="Integer 16" defaultValueString="0" optional="NO"/>
+        <attribute name="bodyRTFDataValue" attributeType="Binary" optional="NO"/>
+    </entity>
+    <entity name="Category" representedClassName="Category" syncable="YES" codeGenerationType="class">
+        <attribute name="idValue" attributeType="UUID" usesScalarValueType="NO" optional="NO"/>
+        <attribute name="nameValue" attributeType="String" defaultValueString="" optional="NO"/>
+        <attribute name="colorHexValue" attributeType="String" defaultValueString="8A857C" optional="NO"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="JournalEntry" inverseName="category" inverseEntity="JournalEntry"/>
+    </entity>
+</model>
