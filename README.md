@@ -16,7 +16,7 @@ A spiritual Swift successor to RedNotebook - a native macOS journal built from t
 
 SwiftNotebook is a local-first journaling app for macOS. There's no account to create and no server involved: you choose a folder on your Mac, and that folder becomes your journal. Everything is stored there in a local database, so it moves, backs up, and syncs exactly like any other file on your system. Drop it in iCloud Drive or Dropbox and it just works.
 
-The writing experience is built on genuine rich text (the same `NSTextView` technology behind TextEdit and Notes), not a markdown dialect. Formatting is applied directly, so bold and italic look bold and italic while you're writing, not as literal `**asterisks**` cluttering the page.
+The writing experience is built on genuine rich text (the same `NSTextView` technology behind TextEdit and Notes), not a markdown dialect. Formatting is applied directly, so bold and italic look bold and italic while you're writing.
 
 ## Features
 
